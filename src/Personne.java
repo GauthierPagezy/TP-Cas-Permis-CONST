@@ -9,9 +9,12 @@ abstract public class Personne
     }
 
     private String validate (String chaine, Integer taille)
-    { // Vérifie la taille et renvoie une chaîne tronquée
-// si la taille est supérieure à taille
-        return chaine; }
+    {
+        while (chaine.length() >= taille) {
+           chaine += chaine.substring(0, chaine.length()-1);
+        }
+        return chaine;
+    }
 
     public abstract String toString();
 
