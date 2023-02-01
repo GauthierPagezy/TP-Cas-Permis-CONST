@@ -39,7 +39,7 @@ class Architecte extends Personne {
       } */
 
         public String toString () {
-            String chaine = this.nom + " "+this.prenom+ " "+this.telephone+" "+this.conseilRegional+ " "+this.adresse.toString();
+            String chaine = this.nom + " "+this.prenom+ " "+this.telephone+" "+this.conseilRegional;
             if(!inscriptionOrdre){
                 chaine += " "+ " Inscrit";
             } else {

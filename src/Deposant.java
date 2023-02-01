@@ -11,7 +11,7 @@ public class Deposant extends Personne {
     }
 
     public String toString(){
-        return "Nom : "+this.nom+" Prenom : "+this.prenom+" Civilite : "+this.civilite+" Mail : "+this.mail+" Adresse : "+this.adresse;
+        return "Nom : "+this.nom+" Prenom : "+this.prenom+" Civilite : "+this.civilite+" Mail : "+this.mail;
     }
 
 }
