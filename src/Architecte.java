@@ -1,34 +1,51 @@
+import org.jetbrains.annotations.NotNull;
+
 class Architecte extends Personne {
 
     private String conseilRegional;
     private boolean inscriptionOrdre;
     private Adresse adresse;
-    private String  telephone;
+    private String telephone;
 
-    public Architecte(String nom, String prenom, String conseilRegional, boolean inscriptionOrdre, Adresse adresse, String telephone)
-        {
-            super(nom, prenom);
-            this.conseilRegional = conseilRegional;
-            this.inscriptionOrdre = inscriptionOrdre;
-            this.adresse = adresse;
-            if (telephoneValide(telephone)) {
-                this.telephone = telephone; }
-            else {
-                this.telephone = ""; }
-            Maj_conseilRegional();
+    public Architecte(String nom, String prenom, String conseilRegional, boolean inscriptionOrdre, Adresse adresse, String telephone) {
+        super(nom, prenom);
+        this.conseilRegional = conseilRegional;
+        this.inscriptionOrdre = inscriptionOrdre;
+        this.adresse = adresse;
+        if (telephoneValide(telephone)) {
+            this.telephone = telephone;
+        } else {
+            this.telephone = "";
         }
-        private boolean telephoneValide(String telephone){
+        //Maj_conseilRegional();
+    }
 
+    private boolean telephoneValide(@NotNull String telephone) {
+        boolean state = false;
+        if (telephone.length() == 10) {
+            state = true;
+            for (int i = 0; i < telephone.length(); i++) {
+                char a = telephone.charAt(i);
+                if (!Character.isDigit(telephone.charAt(i)) | a == ' ') {
+                    state = false;
+                    break;
+                }
+            }
         }
-        public void Maj_conseilRegional() { ............................................................................}
-// renvoie une chaine contenant le nom, le prenom, le conseil regional et
-// le numero de telephone de l'architecte ainsi que la mention "inscrit"
-// s'il est inscrit au conseil de l'ordre ou "non inscrit" dans le cas contraire
+        return state;
+    }
+
+    /* public void Maj_conseilRegional(String conseilRegional) {
+      } */
+
         public String toString () {
-            String chaine = "";
-..............................
-            chaine = chaine + this.conseilRegional + " ";
-........................................................................
-........................................................................
-        }
+            String chaine = this.nom + " "+this.prenom+ " "+this.telephone+" "+this.conseilRegional+ " "+this.adresse.toString();
+            if(!inscriptionOrdre){
+                chaine += " "+ " Inscrit";
+            } else {
+                chaine += " "+ "Non inscrit";
+            }
+            return chaine;
+    }
+
 }

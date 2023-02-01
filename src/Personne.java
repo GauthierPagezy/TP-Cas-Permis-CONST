@@ -10,8 +10,8 @@ abstract public class Personne
 
     private String validate (String chaine, Integer taille)
     {
-        while (chaine.length() >= taille) {
-           chaine += chaine.substring(0, chaine.length()-1);
+        if (chaine.length() > taille) {
+           chaine = chaine.substring(0, taille);
         }
         return chaine;
     }
