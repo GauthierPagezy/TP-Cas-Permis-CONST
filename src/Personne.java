@@ -8,7 +8,7 @@ abstract public class Personne
         this.prenom = validerChaine(prenom, 30);
     }
 
-    private String validerChaine(String chaine, Integer taille)
+    public String validerChaine(String chaine, Integer taille)
     {
         if (chaine.length() > taille) {
            chaine = chaine.substring(0, taille);

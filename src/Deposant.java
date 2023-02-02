@@ -5,13 +5,13 @@ public class Deposant extends Personne {
 
     public Deposant(String nom, String prenom, String civilite, String mail, Adresse adresse){
         super(nom, prenom);
-        this.civilite = civilite;
-        this.mail = mail;
+        this.civilite = validerChaine(civilite, 10);
+        this.mail = validerChaine(mail, 15);
         this.adresse = adresse;
     }
 
     public String toString(){
-        return "Nom : "+this.nom+" Prenom : "+this.prenom+" Civilite : "+this.civilite+" Mail : "+this.mail;
+        return this.nom+" "+this.prenom+" "+this.civilite+"  "+this.mail;
     }
 
 }
