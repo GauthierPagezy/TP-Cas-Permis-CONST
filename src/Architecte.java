@@ -1,5 +1,7 @@
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
+
 class Architecte extends Personne {
 
     private String conseilRegional;
@@ -17,7 +19,7 @@ class Architecte extends Personne {
         } else {
             this.telephone = "";
         }
-        //Maj_conseilRegional();
+        Maj_conseilRegional();
     }
 
     private boolean telephoneValide(@NotNull String telephone) {
@@ -35,8 +37,9 @@ class Architecte extends Personne {
         return state;
     }
 
-    /* public void Maj_conseilRegional(String conseilRegional) {
-      } */
+     public void Maj_conseilRegional() {
+        System.out.println(this.toString());
+      }
 
         public String toString () {
             String chaine = this.nom + " "+this.prenom+ " "+this.telephone+" "+this.conseilRegional;
