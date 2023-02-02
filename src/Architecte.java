@@ -44,9 +44,9 @@ class Architecte extends Personne {
         public String toString () {
             String chaine = this.nom + " "+this.prenom+ " "+this.telephone+" "+this.conseilRegional;
             if(!inscriptionOrdre){
-                chaine += " "+ " Inscrit";
+                chaine += " "+ " Non Inscrit";
             } else {
-                chaine += " "+ "Non inscrit";
+                chaine += " "+ "Inscrit";
             }
             return chaine;
     }
