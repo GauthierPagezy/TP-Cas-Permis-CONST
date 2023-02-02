@@ -22,14 +22,7 @@ public class Adresse {
     public String toString(){
     return this.numero+" "+this.voie+ " "+this.ville+ " "+this.cp;
     }
-
-    public boolean isEqual(Adresse a){
-        if (this.numero == a.numero && this.voie == a.voie && this.ville == a.ville && this.cp == a.cp){
-            return true;
-        } else {
-            return false;
-        }
-    }
+    
 }
 
 
