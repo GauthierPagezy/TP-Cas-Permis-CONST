@@ -11,7 +11,7 @@ class Architecte extends Personne {
 
     public Architecte(String nom, String prenom, String conseilRegional, boolean inscriptionOrdre, Adresse adresse, String telephone) {
         super(nom, prenom);
-        this.conseilRegional = conseilRegional;
+        this.conseilRegional = validerChaine(conseilRegional, 15);
         this.inscriptionOrdre = inscriptionOrdre;
         this.adresse = adresse;
         if (telephoneValide(telephone)) {
